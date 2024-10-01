@@ -1,0 +1,25 @@
+Relation :
+
+- one to many
+- many to one
+- many to many
+- one to one
+
+Class Student :
+
+@OneToMany(mappedBy ="student")
+private Set<Enrollment> enrollments;
+
+Class Enrollment :
+
+@ManyToOne
+@JoinColumn(name = "StudentId")
+private Student student;
+
+@ManyToMany
+@JoinTable (name="Student Course",
+joinColumns = @JoinColumn (name ="StudentId"),
+inverseJoinColumns = @JoinColumn (name ="CourseId"))
+
+private Set<course> courses;
+

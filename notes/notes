@@ -1,0 +1,34 @@
+Pojo : Un ancien objet Java ordinaire (POJO) est une définition de classe qui n'est pas liée à un framework Java afin que n'importe quel programme Java puisse l'utiliser.
+Un POJO n'a pas de convention de nommage spécifique pour les propriétés et les méthodes, ou d'autres restrictions spéciales.
+Leur principal avantage est leur réutilisabilité et leur simplicité.
+
+Easy loading : Le "easy loading" en Java fait référence à des techniques simplifiées pour charger des ressources, configurations ou classes de manière efficace et directe,
+souvent en utilisant des outils ou des méthodes intégrées pour simplifier le processus. Cela peut inclure des chargements de fichiers
+de configuration, de ressources, ou de classes dynamiques.
+
+A cocher dans un new projet :
+spring boot devtools
+lombok
+spring web
+thymeleaf
+spring data jpa
+ms sql server driver
+
+faire package :
+model
+repository
+service
+
+
+pour  jpa il faut un constructeur vide
+
+
+//Entity pour dire que c est une entité et donc pour la base de donnée
+//Id primary key
+//transient sert a ne pas persister la list dans la base de donnée. On en fait un usage temporaire
+
+modifié ressources/application.properties
+modifié test studentApplicationtests
+
+Verif si tcpip dans sql est activé dan ssql server configuration manager/protocol../ mettre tcpip en enable => voir discord
+
