@@ -168,4 +168,4 @@ class StudentApplicationTests {
     }
 }
 
-//regarder jpaBuddy
+//regarder jpaBuddy pour vendredi

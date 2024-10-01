@@ -1,5 +1,6 @@
 package be.ipam.student.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.HashSet;
@@ -13,6 +14,7 @@ public class Course {
     private String courseName;
     private String courseDescription;
     @OneToMany(mappedBy = "course")
+    @JsonIgnore
     private Set<Enrollment> students = new HashSet<>();
 
 
