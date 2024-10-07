@@ -1,0 +1,5 @@
+    dans build.gradle :
+    implementation 'org.mapstruct:mapstruct:1.5.5.Final'
+    annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final'
+
+    allez a droite 5 eme onglet relancer

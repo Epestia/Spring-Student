@@ -1,33 +1,30 @@
 package be.ipam.student.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
 import jakarta.persistence.*;
 
 import java.util.Date;
 
 @Entity
-@Table(name = "Enrollment")
 public class Enrollment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int EnrollmentId;
+    private int enrollmentID;
     @ManyToOne
-    @JoinColumn(name ="studentID")
+    @JoinColumn(name = "studentID")
+    @JsonIgnore
     private Student student;
     @ManyToOne
     @JoinColumn(name = "courseID")
     private Course course;
-    private Date EnrollmentDate;
+    private Date enrollmentDate;
 
-
-    public int getEnrollmentId() {
-        return EnrollmentId;
+    public int getEnrollmentID() {
+        return enrollmentID;
     }
 
-    public void setEnrollmentId(int enrollmentId) {
-        EnrollmentId = enrollmentId;
+    public void setEnrollmentID(int enrollmentID) {
+        this.enrollmentID = enrollmentID;
     }
 
     public Student getStudent() {
@@ -47,10 +44,10 @@ public class Enrollment {
     }
 
     public Date getEnrollmentDate() {
-        return EnrollmentDate;
+        return enrollmentDate;
     }
 
     public void setEnrollmentDate(Date enrollmentDate) {
-        EnrollmentDate = enrollmentDate;
+        this.enrollmentDate = enrollmentDate;
     }
 }
