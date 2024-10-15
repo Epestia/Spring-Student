@@ -5,6 +5,7 @@ import be.ipam.student.dto.CourseFullDto;
 import be.ipam.student.model.Course;
 import be.ipam.student.service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -65,12 +66,8 @@ public class CourseController {
     }
 
     @GetMapping("/name/{courseName}")
-    public ResponseEntity<Course> findCourseByName(@PathVariable String courseName){
-        Optional<Course> course = courseService.getCourseByName(courseName);
+    public ResponseEntity<CourseDto> findCourseByName(@PathVariable String courseName){
+        Optional<CourseDto> course = courseService.getCourseByName(courseName);
         return course.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 }
-
-    /*public CourseController(CourseService courseService) {
-        this.courseService = new CourseService();
-    }*/

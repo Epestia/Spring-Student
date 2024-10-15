@@ -10,11 +10,11 @@ import java.util.Set;
  * DTO for {@link be.ipam.student.model.Student}
  */
 @Value
-public class StudentDto implements Serializable {
+public class StudentFullDto implements Serializable {
     int studentID;
     String firstName;
     String lastName;
     Date birthDate;
     String mail;
-    String passwordHash;
+    Set<EnrollmentWithCourseDto> enrollments;
 }

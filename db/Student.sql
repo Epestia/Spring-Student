@@ -34,8 +34,22 @@ CREATE TABLE Enrollment (
     FOREIGN KEY (CourseID) REFERENCES Course(CourseID)
 );
 
+-- Create the Address table :
+CREATE TABLE Address (
+    StudentID INT NOT NULL,
+    Street VARCHAR(500),
+    Number VARCHAR(50),
+    PostalCode VARCHAR(50),
+    City VARCHAR(200),
+    PRIMARY KEY (StudentID),
+    FOREIGN KEY (StudentID) REFERENCES Student(StudentID) ON DELETE CASCADE
+);
+
 -- Index :
 CREATE NONCLUSTERED INDEX IX_Students_LastName_FirstName ON Student (LastName, FirstName);
 CREATE NONCLUSTERED INDEX IX_Courses_CourseName ON Course (CourseName);
 CREATE NONCLUSTERED INDEX IX_Enrollments_CourseID ON Enrollment (CourseID);
-CREATE NONCLUSTERED INDEX IX_Enrollments_StudentID ON Enrollment (StudentID); 
+CREATE NONCLUSTERED INDEX IX_Enrollments_StudentID ON Enrollment (StudentID);
+CREATE INDEX idx_street ON Address (Street);
+CREATE INDEX idx_postal_code ON Address (PostalCode);
+CREATE INDEX idx_city ON Address (City);

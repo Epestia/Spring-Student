@@ -25,4 +25,12 @@ public class EnrollmentController {
         Optional<EnrollmentDto> enrollment = enrollmentService.createEnrollment(enrollmentDto);
         return enrollment.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
+
+
+
+
+
+
+
+
 }

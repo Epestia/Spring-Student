@@ -9,9 +9,8 @@ import java.util.Date;
  * DTO for {@link be.ipam.student.model.Enrollment}
  */
 @Value
-public class EnrollmentDto implements Serializable {
+public class EnrollmentWithCourseDto implements Serializable {
     int enrollmentID;
-    StudentDto student;
     CourseDto course;
     Date enrollmentDate;
 }
